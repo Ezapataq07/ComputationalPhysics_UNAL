@@ -1,0 +1,85 @@
+!REAL FUNCTION f(x)
+!    IMPLICIT NONE
+!    REAL,INTENT(IN)::x
+!    f=x**2
+!END FUNCTION
+!
+!REAL FUNCTION g(x)
+!    IMPLICIT NONE
+!    REAL,INTENT(IN)::x
+!    g=EXP(x)
+!END FUNCTION
+!
+!REAL FUNCTION h(x)
+!    IMPLICIT NONE
+!    REAL,INTENT(IN)::x
+!    h=SIN(x)
+!END FUNCTION
+!!!!!!!!!!!!!!!!!!!!!!!!
+!SUBROUTINE compuesta(f,g,h,x0,res)
+!    IMPLICIT NONE
+!    EXTERNAL::f,g,h
+!    REAL,INTENT(IN)::x0
+!    REAL,INTENT(OUT)::res
+!    REAL::hx,gh,fcomp
+!    CALL h(x0,hx)
+!    CALL g(hx,gh)
+!    CALL f(gh,fcomp)
+!    res=fcomp
+!    RETURN
+!END SUBROUTINE
+!
+!PROGRAM trescomp
+!    IMPLICIT NONE
+!    EXTERNAL::f,g,h
+!    REAL::x,fcomp
+!    WRITE(*,*)'Introduzca x'
+!    READ(*,*)x
+!    CALL compuesta(f,g,h,x,fcomp)
+!    WRITE(*,*)'f(g(h(',x,')=',fcomp
+!END PROGRAM
+!
+!SUBROUTINE f(x,y)
+!    REAL,INTENT(IN)::x
+!    REAL,INTENT(OUT)::y
+!    y=x**2
+!    RETURN
+!END SUBROUTINE
+!
+!SUBROUTINE g(x,y)
+!    REAL,INTENT(IN)::x
+!    REAL,INTENT(OUT)::y
+!    y=EXP(x)
+!    RETURN
+!END SUBROUTINE
+!
+!SUBROUTINE h(x,y)
+!    REAL,INTENT(IN)::x
+!    REAL,INTENT(OUT)::y
+!    y=SIN(x)
+!    RETURN
+!END SUBROUTINE
+
+PROGRAM pppp
+
+REAL,ALLOCATABLE,DIMENSION(:,:)::a,b
+REAL,ALLOCATABLE,DIMENSION(:)::vf,vc
+INTEGER::af,ac,bf,bc,k,l,i,j
+
+WRITE(*,*)'Ingrese la forma de la matriz A'
+READ(*,*)af,ac
+WRITE(*,*)'Ingrese la forma de la matriz B'
+READ(*,*)bf,bc
+
+IF (ac==bf) THEN
+    ALLOCATE(a(af,ac),b(bf,bc),vf(ac),vc(bf))
+    DO k=1,af
+        WRITE(*,*)'Ingresa la fila',k,'de la matriz A'
+        READ(*,*)(a(k,l),l=1,ac,1)
+    END DO
+END IF
+DO k=1,af
+    WRITE(*,*)(a(k,:))
+END DO
+
+END PROGRAM

@@ -1,0 +1,8 @@
+14:22:35 **** Build of configuration Default for project OchoAgain ****
+make all 
+gfortran -O2 -g \
+	-o bin/OchoAgain.exe \
+	src/OchoAgain.f90
+
+14:22:45 Build Finished (took 9s.493ms)
+

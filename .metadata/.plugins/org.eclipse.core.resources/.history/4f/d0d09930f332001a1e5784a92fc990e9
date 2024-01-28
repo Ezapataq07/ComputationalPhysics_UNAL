@@ -1,0 +1,45 @@
+MODULE cplx
+CONTAINS
+SUBROUTINE modulos(matriz, mmod)
+    COMPLEX(8),INTENT(IN),DIMENSION(:,:)::matriz
+    REAL(8),INTENT(OUT),DIMENSION(:,:)::mmod
+    INTEGER::row,col
+    row=SIZE(matriz,1)
+    col=SIZE(matriz,2)
+    DO i=1,row
+        DO j=1,col
+            mmod(i,j)=CABS(matriz(i,j))
+        END DO
+    END DO
+    RETURN
+END SUBROUTINE
+SUBROUTINE minimos(matriz,mmod,inmin,vmin)
+    COMPLEX(8),INTENT(IN),DIMENSION(:,:)::matriz
+    REAL(8),INTENT(IN),DIMENSION(:,:)::mmod
+    INTEGER,INTENT(OUT),DIMENSION(2)::inmin
+    REAL(8),INTENT(OUT)::vmin
+    inmin=MINLOC(mmod)
+    vmin=MINVAL(mmod)
+    WRITE(*,*)'El modulo mas pequeño es igual a',vmin,',se encuentra en la posición',inmin,'y corresponde al complejo',matriz(inmin)
+END SUBROUTINE
+END MODULE
+PROGRAM ochoA
+USE cplx
+REAL(8)::rp,ip
+REAL(8),ALLOCATABLE,DIMENSION(:,:)::m,mm
+INTEGER::row,col
+WRITE(*,*)'Ingresa la forma de la matriz compleja'
+READ(*,*)row,col
+ALLOCATE(m(row,col),mm(row,col))
+WRITE(*,*)'Ingresa parte real y luego parte imaginaria del complejo'
+DO i=1,row
+    DO j=1,col
+        WRITE(*,*)'Ingresa la entrada (',i,',',j,') de la matriz'
+        READ(*,*)rp,ip
+        m(i,j)=CMPLX(rp,ip,8)
+    END DO
+END DO
+CALL modulos(m,mm)
+CALL minimos(m,mm)
+END PROGRAM
+

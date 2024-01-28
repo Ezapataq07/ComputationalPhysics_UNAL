@@ -1,0 +1,15 @@
+MODULE cplx
+CONTAINS
+SUBROUTINE modulos(matriz, mmod)
+    COMPLEX(8),INTENT(IN),DIMENSION(:,:)::matriz
+    REAL(8),INTENT(OUT),DIMENSION(:,:)::mmod
+    INTEGER::row,col
+    row=SIZE(matriz,1)
+    col=SIZE(matriz,2)
+    DO i=1,row
+        DO j=1,col
+            mmod(i,j)=CABS(matriz(i,j)
+        END DO
+    END DO
+    RETURN
+END SUBROUTINE

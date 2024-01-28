@@ -1,0 +1,8 @@
+09:50:06 **** Incremental Build of configuration Default for project Prueba ****
+make all 
+gfortran -O2 -g \
+	-o bin/Prueba.exe \
+	src/Prueba.f90
+
+09:50:08 Build Finished (took 1s.881ms)
+

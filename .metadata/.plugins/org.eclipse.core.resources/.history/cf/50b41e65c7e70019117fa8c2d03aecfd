@@ -1,0 +1,6 @@
+PROGRAM cuatro
+
+    DO i=1,5,0.5
+        WRITE(*,*) i
+    END DO
+END PROGRAM cuatro

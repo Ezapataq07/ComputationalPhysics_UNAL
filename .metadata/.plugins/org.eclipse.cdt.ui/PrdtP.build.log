@@ -1,0 +1,8 @@
+17:44:07 **** Incremental Build of configuration Default for project PrdtP ****
+make all 
+gfortran -O2 -g \
+	-o bin/PrdtP.exe \
+	src/PrdtP.f90
+
+17:44:09 Build Finished (took 1s.242ms)
+

@@ -1,0 +1,5 @@
+16:25:47 **** Incremental Build of configuration Default for project NueveActividad ****
+make all 
+gfortran -O2 -g \
+	-o bin/NueveActividad.exe \
+	src/NueveActividad.f90

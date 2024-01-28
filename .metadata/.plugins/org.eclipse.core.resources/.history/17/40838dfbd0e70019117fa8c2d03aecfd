@@ -1,0 +1,24 @@
+PROGRAM cuatro
+    CHARACTER(10)::b,t
+    REAL::a
+    LOGICAL::f
+    WRITE(*,*) 'Enter the bynary number..'
+    READ(*,*) b
+    WRITE(*,*) b(1:1)
+    a=0
+    DO i=1,LEN(b)
+        t=b(i:i)
+        IF ((t=='1').OR.(t=='0')) THEN
+            IF (t=='1') THEN
+                a=a+2**(LEN(b)-i)
+            END IF
+        ELSE
+            WRITE(*,*)'Incorrect input'
+            f=.FALSE.
+            EXIT
+        END IF
+    END DO
+    IF (f.NEQV..FALSE.) THEN
+        WRITE(*,*) 'El decimal correspondiente es:',a
+    END IF
+END PROGRAM cuatro

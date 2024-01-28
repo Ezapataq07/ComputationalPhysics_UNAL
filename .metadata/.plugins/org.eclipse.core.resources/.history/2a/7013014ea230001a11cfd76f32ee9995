@@ -1,0 +1,39 @@
+PROGRAM uen
+INTEGER,ALLOCATABLE,DIMENSION(:)::a,b,r
+INTEGER,ALLOCATABLE,DIMENSION(:)::u,in
+INTEGER::la,lb,lr,lu,lin,cu
+WRITE(*,*)'Ingrese el grado del arreglo A y luego el del arreglo B'
+READ(*,*)la,lb
+ALLOCATE(a(la),b(lb),r(la+lb))
+WRITE(*,*)'Ingrese el arreglo A'
+READ(*,*)(a(i),i=1,la)
+WRITE(*,*)'Ingrese el arreglo B'
+READ(*,*)(b(i),i=1,lb)
+!Union
+lu=0
+DO n=1,la
+    r(n)=a(n)
+    lu=lu+1
+END DO
+DO i=1,lb
+    cu=0
+    DO j=1,la
+        IF (b(i)/=a(j)) THEN
+            cu=cu+1
+        END IF
+    END DO
+    IF (cu==3) THEN
+        lu=lu+1
+        r(lu)=b(i)
+    END IF
+END DO
+ALLOCATE(u(lu))
+DO k=1,lu
+    u(k)=r(k)
+END DO
+WRITE(*,*)'La union es:',u
+
+
+
+END PROGRAM
+

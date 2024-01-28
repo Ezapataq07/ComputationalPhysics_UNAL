@@ -1,0 +1,10 @@
+PROGRAM uen
+INTEGER,ALLOCATABLE,DIMENSION(:)::a,b,r
+INTEGER,ALLOCATABLE,DIMENSION(:)::u,in
+INTEGER::la,lb,lr,lu,lin
+WRITE(*,*)'Ingrese el grado del arreglo A y luego el del arreglo B'
+READ(*,*)la,lb
+a(1)=0
+WRITE(*,*)a
+END PROGRAM
+

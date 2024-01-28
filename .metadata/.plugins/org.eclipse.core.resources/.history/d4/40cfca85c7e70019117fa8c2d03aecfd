@@ -1,0 +1,5 @@
+PROGRAM cuatro
+    CHARACTER(10)::b
+    b='djacb'
+    WRITE(*,*) b(1)
+END PROGRAM cuatro

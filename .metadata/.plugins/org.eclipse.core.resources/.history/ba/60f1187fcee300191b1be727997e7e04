@@ -1,0 +1,55 @@
+!program dos19
+!    implicit none
+!    REAL :: b,a,r
+!    WRITE (*,*) "Ingresa la base del logaritmo seguida del argumento"
+!    READ (*,*) b,a
+!    r=LOG(a)/LOG(b)
+!    WRITE (*,*) "El resultado es",r
+!end program
+
+#3-5
+!program tres5
+!    implicit none
+!    REAL :: w,c
+!
+!    WRITE (*,*) "Write the package weight in pounds"
+!    READ (*,*) w
+!    c=0
+!    IF (w<=100) THEN
+!        IF (w>2) THEN
+!            c=c+12+4*(w-2)
+!        ELSE
+!            c=c+12
+!        END IF
+!        IF (w>70) THEN
+!            c=c+10
+!        END IF
+!        WRITE (*,*) "The cost of mailing the package is: $",c
+!    ELSE
+!        WRITE (*,*) "No package over 100 pounds will be accepted"
+!    END IF
+!end program tres5
+
+#3-7
+PROGRAM tres7
+    IMPLICIT NONE
+    REAL::x,y,fun
+
+    WRITE (*,*) 'Enter the values of x and y'
+    READ (*,*) x,y
+
+    ge0: IF (x>=0) THEN
+        gy: IF (y>=0) THEN
+            fun=x+y
+            ELSE IF (y<0) THEN sy
+            fun=x+y**2
+            END IF gy
+         ELSE IF (x<0) THEN s0
+         gy2: IF (y>=0) THEN
+              fun=x**2+y
+              ELSE IF (y<0) THEN sy2
+              fun=x**2+y**2
+              END IF gy2
+         END IF ge0
+     WRITE (*,*) 'El valor de la función f(x,y) es '.fun
+

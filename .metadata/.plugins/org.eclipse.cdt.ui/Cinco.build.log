@@ -1,0 +1,8 @@
+11:34:05 **** Incremental Build of configuration Default for project Cinco ****
+make all 
+gfortran -O2 -g \
+	-o bin/Cinco.exe \
+	src/Cinco.f90
+
+11:34:07 Build Finished (took 2s.362ms)
+

@@ -1,0 +1,30 @@
+!program dos19
+!    implicit none
+!    REAL :: b,a,r
+!    WRITE (*,*) "Ingresa la base del logaritmo seguida del argumento"
+!    READ (*,*) b,a
+!    r=LOG(a)/LOG(b)
+!    WRITE (*,*) "El resultado es",r
+!end program
+#3-5
+program tres5
+    implicit none
+    REAL :: w,c
+
+    WRITE (*,*) "Write the package weight in pounds"
+    READ (*,*) w
+    c=0
+    IF (w<=100) THEN
+        IF (w>2) THEN
+            c=c+12+4*(w-2)
+        ELSE
+            c=c+12
+        END IF
+        IF (w>70) THEN
+            c=c+10
+        END IF
+        WRITE (*,*) "The cost of mailing the package is: $",c
+    ELSE
+        WRITE (*,*) "No package over 100 pounds will be accepted"
+    END IF
+end program tres5

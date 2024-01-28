@@ -1,0 +1,5 @@
+PROGRAM pilot
+REAL,DIMENSION(3,2)::a
+a=(/(/1,2/),(/3,4/),(/5,6/)/)
+WRITE(*,*)a
+END PROGRAM

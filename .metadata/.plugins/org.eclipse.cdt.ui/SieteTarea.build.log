@@ -1,0 +1,8 @@
+20:41:52 **** Incremental Build of configuration Default for project SieteTarea ****
+make all 
+gfortran -O2 -g \
+	-o bin/SieteTarea.exe \
+	src/SieteTarea.f90
+
+20:42:03 Build Finished (took 11s.350ms)
+
